@@ -6,7 +6,7 @@ def main():
 
     locker = core.Locker()
     door = core.Door(locker)
-    
+
     core.run(door, ident)
 
 if __name__ == "__main__":

@@ -20,17 +20,17 @@ class Locker(ABC):
             self.state = LockerState.OPENED
             return True
         return False
-        
+
     def close(self) -> None:
         self.state = LockerState.CLOSED
 
 class Door(ABC):
     def __init__(self, locker: Locker) -> None:
         self.locker = locker
-        
+
     def open(self, ident: Identification) -> bool:
         print('Opening the door...')
-        if (self.locker.state != LockerState.CLOSED):
+        if self.locker.state != LockerState.CLOSED:
             return self.locker.open(ident)
         return False
 
